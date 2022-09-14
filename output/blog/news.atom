@@ -1,0 +1,739 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JBake</title>
+    <link>https://jbake.org</link>
+    <atom:link href="https://jbake.org/blog/news.atom" rel="self" type="application/rss+xml" />
+    <description>JBake Bootstrap Template</description>
+    <language>en-gb</language>
+    <pubDate>Wed, 27 Jul 2022 07:58:07 +0000</pubDate>
+    <lastBuildDate>Wed, 27 Jul 2022 07:58:07 +0000</lastBuildDate>
+
+    <item>
+      <title>Exception Response</title>
+      <link>https://jbake.org/blog/response/exception-response.html</link>
+      <pubDate>Tue, 26 Jul 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/response/exception-response.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Exception Response is the response returned when error is encountered while serving the request&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_what_does_it_contains&quot;&gt;What does it contains?&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;status_code : it determines the type of error or exception triggered along with its severity&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;message : detail information about the error&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ResponseMeta : information about the organization serving this system or service&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_exception_status_code_and_cause&quot;&gt;Exception, Status Code And Cause&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The detail information about exceptions, its cause and response status code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 33.3333%;&quot;&gt;
+&lt;col style=&quot;width: 33.3333%;&quot;&gt;
+&lt;col style=&quot;width: 33.3334%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Exception&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Status Code&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Cause&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;ApiException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;400&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;Inactive Api, unregistered Api&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;PublicKeyException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;403&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;use of unregistered public key&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;IpException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;403&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;request from blocked Ip&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;ExpiredKeyException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;403&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;use of expired public key&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;FunnelException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;400&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;use of invalid funnel&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;QuotaException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;403&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;request rate exceeded the allowed rate&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;BaseException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;405&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;request for un-allowed HttpMethod&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;BaseException&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;500&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;error from backend servers&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Getting Started</title>
+      <link>https://jbake.org/blog/addingApi.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/addingApi.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Here is how we register apis in apostle system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_step_1&quot;&gt;&lt;span class=&quot;text-primary&quot;&gt;Step 1&lt;/span&gt;&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;First step is to add base info that is applicable to all apis.Components that are involved are as follows.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;1.1 Redirect To&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It refers to the actual domain or IP of the api server. When the request is validated by apostle middleware system, it forwards the request to this value.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;1.2 Base URL&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This value is given to the user which they use to make the request. It differs from &lt;strong&gt;Redirect To&lt;/strong&gt; is a sense that &lt;strong&gt;Redirect To&lt;/strong&gt; is not known to the user, which makes the actual api server safe.Base URL uses a predefined format &lt;strong&gt;slug&lt;/strong&gt;.apostle.ekbana.net where slug for project is set from Project Management System. The format is pre-configured so, it can be used as soon as the api is registered.However, the format cannot be changed. If someone needs to use other format, they should use &lt;strong&gt;Custom URL&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;1.3 Custom URL&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Unlike BaseURL, custom URL is not pre-configured meaning it cannot be used right away. Server administration must be notified to make an apache conf file for the custom URL. Custom url is not restricted in any specific format so, you can use any format you need.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;1.4 Protocol &lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Both HTTP and HTTPs protocol is supported. This protocol is used to forward the incoming request to api server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_step_2&quot;&gt;&lt;span class=&quot;text-primary&quot;&gt;Step 2&lt;/span&gt;&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now, we add additional information for the API.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;2.1 Name&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Unique identifier for the API.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;2.2 Endpoint&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Endpoint for the api. All value after the domain should be used as endpoint. If the part of endpoint is used in domain and the rest as endpoint, it will throw error during validation and might throw &lt;strong&gt;API not registered&lt;/strong&gt;  error.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;2.3 Method&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Currently, the system supports following methods :&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;GET&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;POST&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PUT&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DELETE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HEAD&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Choosing correct method is important. Incorrect method will result in &lt;strong&gt;API not registered&lt;/strong&gt; error&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;2.4 Creator Email&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If the validator system detect &lt;strong&gt;5xx,4xx&lt;/strong&gt; or any error message, this value will be used to send email to the creator&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;2.5 Is Cached&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Defines if the response should be cached. Checking this value will give options for cache time interval as well as the parameters that will be used for creating cache key. Options include :&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Time&lt;br&gt;
+Currently &lt;strong&gt;Minute, Hour and Day&lt;/strong&gt; values are supported. Existing cache will be removed after this defined interval&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache headers&lt;br&gt;
+If this value is set, the validator system will check in headers for this &lt;strong&gt;header-key&lt;/strong&gt; and use the corresponding &lt;strong&gt;header-value&lt;/strong&gt; to create cache key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Query parameters&lt;br&gt;
+If this value is set, the validator system will check in URL for this &lt;strong&gt;query-key&lt;/strong&gt; and use the corresponding &lt;strong&gt;query-value&lt;/strong&gt; to create cache key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If both above values are set, the validator system will use both to create cache key.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;2.6 Request Add-ons&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;These values will be added to current request. The value that are set here will not be known to user only to validator system and api server. It is extremely important since it will prevent any attempt to bypass validator.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Headers&lt;br&gt;
+Values will be added as header parameters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Query Parameters&lt;br&gt;
+Values will be added as query parameters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Valid Response</title>
+      <link>https://jbake.org/blog/response/valid-response.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/response/valid-response.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Valid response are the response other than responses generated by this system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There are 3 types of valid responses.&lt;br&gt;
+1. &lt;a href=&quot;https://apostle-docs.ekbana.net/blog/response/mock-response.html&quot;&gt;Mock Response&lt;/a&gt;&lt;br&gt;
+2. &lt;a href=&quot;https://apostle-docs.ekbana.net/blog/response/backend-response.html&quot;&gt;Backend Response&lt;/a&gt;&lt;br&gt;
+3. &lt;a href=&quot;https://apostle-docs.ekbana.net/blog/response/cache-response.html&quot;&gt;Cache response&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Mock Response</title>
+      <link>https://jbake.org/blog/response/mock-response.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/response/mock-response.html</guid>
+      	<description>
+	&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_why_mock_response&quot;&gt;Why Mock Response?&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;prevent the API from collapsing while under development or backend server issue.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;can be used for testing&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_how_to_configure_mock_response&quot;&gt;How to configure Mock Response?&lt;/h3&gt;
+
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Cache Response</title>
+      <link>https://jbake.org/blog/response/cache-response.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/response/cache-response.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Cache Response is the response service that enables the caching of the response in order to decrease the response time of the request.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_why_caching_response&quot;&gt;Why Caching Response ?&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;decrease the response time of request.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;reduces the loads to backend servers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_how_to_configure_caching&quot;&gt;How to configure Caching&lt;/h3&gt;
+
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_how_caching_is_done&quot;&gt;How Caching is done ?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Only the responses from the cache enabled APIs are stored in cache.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Cacheable responses are stored using Hash data structure in Redis database.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Hash Key is created using the alias and api_id&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sub Hash Key is created using the caching headers param, caching query params and path variables specified while registering the API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Response are set as values for the specific sub hash key for specific TTL period defined while registering API&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Only the response with http status 200 are eligible for caching.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Backend Response</title>
+      <link>https://jbake.org/blog/response/backend-response.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/response/backend-response.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Backend Response is the response obtained from the backend servers.&lt;/p&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Publickey Validation</title>
+      <link>https://jbake.org/blog/policy/publickey-validation-policy.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/policy/publickey-validation-policy.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Publickey Validation allows to send request from the valid client by validating Api-Key.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_what_is_api_key&quot;&gt;What is Api-Key?&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Api-Key is a unique secret key (public key) generated when registering the group of Api (project) in the system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_how_is_publickey_validated&quot;&gt;How is Publickey Validated?&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When client sends request, they should send the Api-Key in the header section. The provided Api_Key must match with the publickey registered in the system else it throws PublicKeyException.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>PersonalPackage Validation</title>
+      <link>https://jbake.org/blog/policy/personalpackage-validation-policy.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/policy/personalpackage-validation-policy.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;PersonalPackage Validation  validated the personal packaged. It is associated with the public key.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_what_is_personalpackage&quot;&gt;What is PersonalPackage?&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;PersonalPackage is the package defining the quota and lifespan of the public key. Quota includes the agreed total calls and grace calls allowed for specific api. And lifespan determines how long to serve the Api.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_how_and_when_is_personalpackage_validated&quot;&gt;How and when is PersonalPackage validated?&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;PublicKey validated requests are set for personal package validation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;total calls usages and grace calls usages are stored in TOTAL_CALLS and GRACE_CALLS keyspace in redis database.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;when the total call usages exceeds the agreed total calls, then the api is registered in GRACE_KEYSPACE and grace calls are started.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;if used grace calls exceed the allowed grace calls, then public key is registered in EXPIRED_KEYSPACE.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;when the current time exceed the lifespan of public key then the public key is expired and is registered in EXPIRED_KEYSPACE.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;whenever a request is using public key which is in EXPIRED_KEYSPACE is sent, then it throws ExpiredKeyException.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>IP Validation</title>
+      <link>https://jbake.org/blog/policy/ip-validation-policy.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/policy/ip-validation-policy.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;IP Validation validate the Ip address of the request. Only the requests from the valid IP source can proceed further&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_classification_of_ip_addresses&quot;&gt;Classification of IP Addresses&lt;/h3&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_1_marked_ip_address&quot;&gt;1. Marked IP Address&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Marked IP Address are the suspicious IP address that has performed some miscellaneous activities. These Ip address are closely monitored by the system and if further miscellaneous activities are performed, then it is blocked. These address can further send requests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_2_blocked_ip_address&quot;&gt;2. Blocked IP Address&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When the suspicious/marked ip address further perform miscellaneous or illegal activities, then there address are marked as block ip address. They cannot further send requests to the system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_3_valid_ip_address&quot;&gt;3. Valid IP Address&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;These are the Ip address from the valid sources. They are allowed to send requests to system.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_how_validation_is_done&quot;&gt;How Validation is done?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All the blocked and marked Ip address are stores in BLOCKED_KEYSPACE AND MARKED_KEYSPACE in hash data structure in redis database. The system first checks if the given ip address is in BLOCKED_KEYSPACE, if present it returns the IPException else proceed forward.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A set of rules has been implemented which is responsible for analysing the ip address. It registers the IP address in MARKED_KEYSPACE and BLOCKED_KEYSPACE.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Funnel Validation</title>
+      <link>https://jbake.org/blog/policy/funnel-validation-policy.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/policy/funnel-validation-policy.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Funnel Validation determine the rate of request to be served under given public key.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_why_funnel_validation&quot;&gt;Why Funnel Validation?&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;determines the number of requests to be served in specific time frame.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_how_is_funnel_validation_done&quot;&gt;How is Funnel Validation done?&lt;/h4&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A rate is defined when an api is registered under the group (public key).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;supports request per minute, hour, day, month and year.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Whenever a request is served, the served request count is incremented by 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the served request count exceed defined rate limit for given time interval, then it throws FunnelException.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_how_tracking_of_request_rates_is_done&quot;&gt;How tracking of request rates is done?&lt;/h4&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the served request count is stored for specific interval of time in the redis database in following format&lt;/p&gt;
+&lt;div class=&quot;literalblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;{public_key_alias}{api-id}_{time-interval} : {served request count} TTL : {TTL duration}&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;when a request is successfully served then the call count in incremented by 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Api Validation</title>
+      <link>https://jbake.org/blog/policy/api-validation-policy.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/policy/api-validation-policy.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Api Validation validates the api used in given request.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_how_is_api_validated&quot;&gt;How is Api validated?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;An Api consists of following parts:&lt;br&gt;
+    . Base Url : www.xyz.com&lt;br&gt;
+    . Request Method : GET, POST, PUT, DELETE, PATCH&lt;br&gt;
+    . End Point : /abc/def&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;An Api is set to be valid Api if and only if Api with same base url, request method and endpoint is registered in the system else invalid.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;ApiException is thrown by system when an invalid api request is received.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>What is a group</title>
+      <link>https://jbake.org/blog/group/groups.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/group/groups.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Groups are the collection of APIs that is used by the client.Api can belong to any projects. Thus, a group may contain APIs from multiple projects.Each group has its own public which must be used to send request to the validator.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_importance&quot;&gt;Importance&lt;/h4&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Groups can use package independently according to the users need.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Grace amount can be set to different amount for each api in that group which won&amp;#8217;t affect same api in different group&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Not restricted to same api. Different group can use same api from same projects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Separate usage dashboard.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Public key is independent, so it can be blocked or assigned a new one for all apis in that group&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_fields&quot;&gt;Fields&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_basic&quot;&gt;Basic&lt;/h4&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Group&lt;/strong&gt; : Name of the group&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;User email&lt;/strong&gt; : This value will be used to send email to the User if following issues are detected :&lt;/p&gt;
+&lt;div class=&quot;olist loweralpha&quot;&gt;
+&lt;ol class=&quot;loweralpha&quot; type=&quot;a&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;A week before public key expiration date.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Allowed calls about to exhaust.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Grace period started.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Grace period ended and key is expired&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DDoS attempt&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_selected_apis&quot;&gt;Selected APIs&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;API Name&lt;/strong&gt; : same as defined during API registration.&lt;br&gt;
+&lt;strong&gt;Package&lt;/strong&gt;  : Here you can select base package for the API. Even in a group different API can have different Package.&lt;br&gt;
+&lt;strong&gt;Grace&lt;/strong&gt;    : Grace calls are the calls that are activated after paid calls are over. Paid calls are defined in a package. Grace calls are allocated so that user can get time to re-subscribe.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_public_key&quot;&gt;Public Key&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Expires On&lt;/strong&gt; : Expiration date of the group and associated public key.&lt;br&gt;
+&lt;strong&gt;Public Key&lt;/strong&gt; : Public key is used by user while sending request to validator.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+    <item>
+      <title>Apostle - overview</title>
+      <link>https://jbake.org/blog/apostle/overview.html</link>
+      <pubDate>Mon, 16 May 2022 18:15:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/apostle/overview.html</guid>
+      	<description>
+	&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Apostle is a reliable, secure and scalable way to publish, consume and manage API’s.It ensures optimal performance of the API’s, tracks and enforces usage, authentication, and more.
+This topic provides an overview of Apostle, including register your API, create group and monitor usage. For more information on specific topic please see relative link on sidebar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In this topic we will walk you through the process of registering your first API and monitoring its usage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let’s do it step by step.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_step_one_register_your_api&quot;&gt;Step One : Register your api&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Click on project on the left sidebar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you don&amp;#8217;t see you project listed, you need to register it on &lt;strong&gt;Project Management System&lt;/strong&gt;, and if you don&amp;#8217;t have access to that system, please contact administrator for registration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click on Add API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For more info on the fields &lt;a href=&quot;https://apostle-docs.ekbana.net/blog/addingApi.html&quot; class=&quot;link-no-decor&quot;&gt;click here&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_step_two_create_a_group&quot;&gt;Step two : Create a group&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Click on add group on client page&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click on select API from project list. You can select api from multiple projects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select the APIs and click on next.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter group name and user email for this group.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select package and add grace calls if it applies.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate public key and save&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For more info on fields &lt;a href=&quot;https://apostle-docs.ekbana.net/blog/group/groups.html&quot; class=&quot;link-no-decor&quot;&gt;click here&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_step_three_create_package_only_necessary_if_you_want_to_use_custom_pacakge&quot;&gt;Step three : Create package [ only necessary if you want to use custom pacakge ]&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Click on packages on left sidebar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click on add package.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fill out necessary details.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For more info on fields &lt;span class=&quot;text-primary&quot;&gt;click here&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+
+  </channel> 
+</rss>

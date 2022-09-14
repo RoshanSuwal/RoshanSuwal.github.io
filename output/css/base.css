@@ -1,0 +1,116 @@
+/*@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";*/
+@import url('http://fonts.cdnfonts.com/css/amazon-ember');
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+
+body {
+  font-family: 'Amazon Ember V2', sans-serif;
+  background: #fafafa;
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+  padding-left: 250px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+
+}
+#footer {
+  background-color: #f5f5f5;
+  padding: 0;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+  padding-top: 10px;
+}
+.container .credit {
+  margin: 10px 0;
+  padding-left: 70px;
+}
+
+#sidebar-wrapper {
+  width: 250px;
+  position: fixed;
+  height: 100%;
+  overflow-y: hidden;
+  background: white;
+  border-right: 2px solid #ebc6c6;
+}
+
+#page-content-wrapper{
+  /*width: 100%;*/
+  /*position: absolute;*/
+  padding-left: 200px;
+  padding:15px;
+  /*border:5px solid;*/
+}
+#navbar-collapse{
+  padding-left: 50%;
+}
+
+.sidebar{
+  padding-left: 30px;
+  line-height: 15px;
+  /*font-family: "Roboto Light";*/
+  /*font-family: 'Poppins', sans-serif;*/
+  font-family: 'Amazon Ember V2', sans-serif;
+  font-variant-caps: all-petite-caps;
+
+
+}
+.sub-sidebar{
+  padding-left: 60px;
+  line-height: 10px;
+  /*font-family: 'Poppins', sans-serif;*/
+  font-family: 'Amazon Ember V2', sans-serif;
+  font-variant-caps: normal;
+  font-size: 14px;
+}
+
+.sidebar-header{
+  padding-left: 30px;
+  font-family: 'Amazon Ember V2', sans-serif;
+  font-weight: bold;
+}
+
+hr{
+  border: 1px solid black;
+}
+
+.separator {
+  border: 1px solid #a8b7a8;
+  border-radius: 5px;
+  margin: auto;
+}

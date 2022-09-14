@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Publickey Validation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+    <link href="../../css/documentation.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../img/logo.png">
+
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrapper">
+      <div class="site-status-banner">
+        <h1>Site is currently in development</h1>
+      </div>
+
+      <div id="sidebar-wrapper">
+    <div class="sidebar-header">
+        <h3><a href="../../index.html">EKbana AMS</a></h3>
+    </div>
+<hr class="separator">
+    <h3 class="sidebar">1 What is Apostle</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/apostle/overview.html">1.1 Overview</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/clients.html">1.2 Benefits</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/clients.html">1.3 Architecture</a> </h4>
+    <h3 class="sidebar">2 Projects</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/addingApi.html">2.1 Getting started</a> </h4>
+    <h3 class="sidebar">3 Packages</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/introduction.html">3.1 Getting started</a> </h4>
+    <h3 class="sidebar">4 Analytics</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/introduction.html">4.1 Getting started</a> </h4>
+    <h3 class="sidebar">5 Group</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/group/groups.html">5.1 About</a> </h4>
+    <h3 class="sidebar">6 Response</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/response/mock-response.html">6.1 mock response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/cache-response.html">6.2 cache response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/backend-response.html">6.3 backend response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/exception-response.html">6.4 exception response</a> </h4>
+
+
+
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+      </div>
+      <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="container">
+	<div class="page-header">
+		<h1>Publickey Validation</h1>
+	</div>
+
+	<p><em>16 May 2022</em></p>
+
+	<div class="media-body">
+		<p><div class="paragraph">
+<p>Publickey Validation allows to send request from the valid client by validating Api-Key.</p>
+</div>
+<div class="sect3">
+<h4 id="_what_is_api_key">What is Api-Key?</h4>
+<div class="paragraph">
+<p>Api-Key is a unique secret key (public key) generated when registering the group of Api (project) in the system.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_is_publickey_validated">How is Publickey Validated?</h4>
+<div class="paragraph">
+<p>When client sends request, they should send the Api-Key in the header section. The provided Api_Key must match with the publickey registered in the system else it throws PublicKeyException.</p>
+</div>
+</div></p>
+	</div>
+	<hr />
+	
+		    </div>
+        </div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer" >
+      <div class="container">
+        <p class="muted credit">&copy; 2022 | <a href="https://ekbana.com/">Ekbana.</a> All Rights Reserved. </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>What is a group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+    <link href="../../css/documentation.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../img/logo.png">
+
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrapper">
+      <div class="site-status-banner">
+        <h1>Site is currently in development</h1>
+      </div>
+
+      <div id="sidebar-wrapper">
+    <div class="sidebar-header">
+        <h3><a href="../../index.html">EKbana AMS</a></h3>
+    </div>
+<hr class="separator">
+    <h3 class="sidebar">1 What is Apostle</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/apostle/overview.html">1.1 Overview</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/clients.html">1.2 Benefits</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/clients.html">1.3 Architecture</a> </h4>
+    <h3 class="sidebar">2 Projects</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/addingApi.html">2.1 Getting started</a> </h4>
+    <h3 class="sidebar">3 Packages</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/introduction.html">3.1 Getting started</a> </h4>
+    <h3 class="sidebar">4 Analytics</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/introduction.html">4.1 Getting started</a> </h4>
+    <h3 class="sidebar">5 Group</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/group/groups.html">5.1 About</a> </h4>
+    <h3 class="sidebar">6 Response</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/response/mock-response.html">6.1 mock response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/cache-response.html">6.2 cache response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/backend-response.html">6.3 backend response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/exception-response.html">6.4 exception response</a> </h4>
+
+
+
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+      </div>
+      <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="container">
+	<div class="page-header">
+		<h1>What is a group</h1>
+	</div>
+
+	<p><em>16 May 2022</em></p>
+
+	<div class="media-body">
+		<p><div class="paragraph">
+<p>Groups are the collection of APIs that is used by the client.Api can belong to any projects. Thus, a group may contain APIs from multiple projects.Each group has its own public which must be used to send request to the validator.</p>
+</div>
+<div class="sect3">
+<h4 id="_importance">Importance</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Groups can use package independently according to the users need.</p>
+</li>
+<li>
+<p>Grace amount can be set to different amount for each api in that group which won&#8217;t affect same api in different group</p>
+</li>
+<li>
+<p>Not restricted to same api. Different group can use same api from same projects.</p>
+</li>
+<li>
+<p>Separate usage dashboard.</p>
+</li>
+<li>
+<p>Public key is independent, so it can be blocked or assigned a new one for all apis in that group</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fields">Fields</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="sect3">
+<h4 id="_basic">Basic</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Group</strong> : Name of the group</p>
+</li>
+<li>
+<p><strong>User email</strong> : This value will be used to send email to the User if following issues are detected :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>A week before public key expiration date.</p>
+</li>
+<li>
+<p>Allowed calls about to exhaust.</p>
+</li>
+<li>
+<p>Grace period started.</p>
+</li>
+<li>
+<p>Grace period ended and key is expired</p>
+</li>
+<li>
+<p>DDoS attempt</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_selected_apis">Selected APIs</h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><strong>API Name</strong> : same as defined during API registration.<br>
+<strong>Package</strong>  : Here you can select base package for the API. Even in a group different API can have different Package.<br>
+<strong>Grace</strong>    : Grace calls are the calls that are activated after paid calls are over. Paid calls are defined in a package. Grace calls are allocated so that user can get time to re-subscribe.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_public_key">Public Key</h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><strong>Expires On</strong> : Expiration date of the group and associated public key.<br>
+<strong>Public Key</strong> : Public key is used by user while sending request to validator.</p>
+</div>
+</div>
+</div></p>
+	</div>
+	<hr />
+	
+		    </div>
+        </div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer" >
+      <div class="container">
+        <p class="muted credit">&copy; 2022 | <a href="https://ekbana.com/">Ekbana.</a> All Rights Reserved. </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

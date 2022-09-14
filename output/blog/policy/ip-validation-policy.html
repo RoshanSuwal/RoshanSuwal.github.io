@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>IP Validation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+    <link href="../../css/documentation.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../img/logo.png">
+
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrapper">
+      <div class="site-status-banner">
+        <h1>Site is currently in development</h1>
+      </div>
+
+      <div id="sidebar-wrapper">
+    <div class="sidebar-header">
+        <h3><a href="../../index.html">EKbana AMS</a></h3>
+    </div>
+<hr class="separator">
+    <h3 class="sidebar">1 What is Apostle</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/apostle/overview.html">1.1 Overview</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/clients.html">1.2 Benefits</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/clients.html">1.3 Architecture</a> </h4>
+    <h3 class="sidebar">2 Projects</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/addingApi.html">2.1 Getting started</a> </h4>
+    <h3 class="sidebar">3 Packages</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/introduction.html">3.1 Getting started</a> </h4>
+    <h3 class="sidebar">4 Analytics</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/introduction.html">4.1 Getting started</a> </h4>
+    <h3 class="sidebar">5 Group</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/group/groups.html">5.1 About</a> </h4>
+    <h3 class="sidebar">6 Response</h3>
+            <h4 class="sub-sidebar"><a href="../../blog/response/mock-response.html">6.1 mock response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/cache-response.html">6.2 cache response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/backend-response.html">6.3 backend response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../../blog/response/exception-response.html">6.4 exception response</a> </h4>
+
+
+
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+      </div>
+      <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="container">
+	<div class="page-header">
+		<h1>IP Validation</h1>
+	</div>
+
+	<p><em>16 May 2022</em></p>
+
+	<div class="media-body">
+		<p><div class="paragraph">
+<p>IP Validation validate the Ip address of the request. Only the requests from the valid IP source can proceed further</p>
+</div>
+<div class="sect2">
+<h3 id="_classification_of_ip_addresses">Classification of IP Addresses</h3>
+<div class="sect3">
+<h4 id="_1_marked_ip_address">1. Marked IP Address</h4>
+<div class="paragraph">
+<p>Marked IP Address are the suspicious IP address that has performed some miscellaneous activities. These Ip address are closely monitored by the system and if further miscellaneous activities are performed, then it is blocked. These address can further send requests.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_blocked_ip_address">2. Blocked IP Address</h4>
+<div class="paragraph">
+<p>When the suspicious/marked ip address further perform miscellaneous or illegal activities, then there address are marked as block ip address. They cannot further send requests to the system.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_valid_ip_address">3. Valid IP Address</h4>
+<div class="paragraph">
+<p>These are the Ip address from the valid sources. They are allowed to send requests to system.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_validation_is_done">How Validation is done?</h3>
+<div class="paragraph">
+<p>All the blocked and marked Ip address are stores in BLOCKED_KEYSPACE AND MARKED_KEYSPACE in hash data structure in redis database. The system first checks if the given ip address is in BLOCKED_KEYSPACE, if present it returns the IPException else proceed forward.</p>
+</div>
+<div class="paragraph">
+<p>A set of rules has been implemented which is responsible for analysing the ip address. It registers the IP address in MARKED_KEYSPACE and BLOCKED_KEYSPACE.</p>
+</div>
+</div></p>
+	</div>
+	<hr />
+	
+		    </div>
+        </div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer" >
+      <div class="container">
+        <p class="muted credit">&copy; 2022 | <a href="https://ekbana.com/">Ekbana.</a> All Rights Reserved. </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

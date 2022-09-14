@@ -1,0 +1,37 @@
+p{
+    font-family: 'Amazon Ember V2', sans-serif;
+    font-size: 18px;
+}
+
+.paragraph {
+    line-height: 25px;
+}
+
+.sidebar,.sub-sidebar>a {
+    color: #181717;
+    line-height: 25px;
+    text-decoration: none;
+}
+.sub-sidebar>a:hover{
+    color: #ec7211;
+}
+
+.sub-sidebar>a:active{
+    color: #ce7f40;
+}
+
+.site-status-banner {
+    border: 1px solid red;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.link-no-decor {
+    text-decoration: none;
+}
+
+.link-no-decor:hover {
+    color: #ce7f40;
+    text-decoration: none;
+}
+

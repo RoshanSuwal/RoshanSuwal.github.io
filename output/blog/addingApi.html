@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Getting Started</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+    <link href="../css/documentation.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../img/logo.png">
+
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrapper">
+      <div class="site-status-banner">
+        <h1>Site is currently in development</h1>
+      </div>
+
+      <div id="sidebar-wrapper">
+    <div class="sidebar-header">
+        <h3><a href="../index.html">EKbana AMS</a></h3>
+    </div>
+<hr class="separator">
+    <h3 class="sidebar">1 What is Apostle</h3>
+            <h4 class="sub-sidebar"><a href="../blog/apostle/overview.html">1.1 Overview</a> </h4>
+            <h4 class="sub-sidebar"><a href="../blog/clients.html">1.2 Benefits</a> </h4>
+            <h4 class="sub-sidebar"><a href="../blog/clients.html">1.3 Architecture</a> </h4>
+    <h3 class="sidebar">2 Projects</h3>
+            <h4 class="sub-sidebar"><a href="../blog/addingApi.html">2.1 Getting started</a> </h4>
+    <h3 class="sidebar">3 Packages</h3>
+            <h4 class="sub-sidebar"><a href="../blog/introduction.html">3.1 Getting started</a> </h4>
+    <h3 class="sidebar">4 Analytics</h3>
+            <h4 class="sub-sidebar"><a href="../blog/introduction.html">4.1 Getting started</a> </h4>
+    <h3 class="sidebar">5 Group</h3>
+            <h4 class="sub-sidebar"><a href="../blog/group/groups.html">5.1 About</a> </h4>
+    <h3 class="sidebar">6 Response</h3>
+            <h4 class="sub-sidebar"><a href="../blog/response/mock-response.html">6.1 mock response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../blog/response/cache-response.html">6.2 cache response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../blog/response/backend-response.html">6.3 backend response</a> </h4>
+            <h4 class="sub-sidebar"><a href="../blog/response/exception-response.html">6.4 exception response</a> </h4>
+
+
+
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+      </div>
+      <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="container">
+	<div class="page-header">
+		<h1>Getting Started</h1>
+	</div>
+
+	<p><em>16 May 2022</em></p>
+
+	<div class="media-body">
+		<p><div class="paragraph">
+<p>Here is how we register apis in apostle system.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1"><span class="text-primary">Step 1</span></h3>
+<div class="paragraph">
+<p>First step is to add base info that is applicable to all apis.Components that are involved are as follows.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.1 Redirect To</strong></p>
+</div>
+<div class="paragraph">
+<p>It refers to the actual domain or IP of the api server. When the request is validated by apostle middleware system, it forwards the request to this value.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.2 Base URL</strong></p>
+</div>
+<div class="paragraph">
+<p>This value is given to the user which they use to make the request. It differs from <strong>Redirect To</strong> is a sense that <strong>Redirect To</strong> is not known to the user, which makes the actual api server safe.Base URL uses a predefined format <strong>slug</strong>.apostle.ekbana.net where slug for project is set from Project Management System. The format is pre-configured so, it can be used as soon as the api is registered.However, the format cannot be changed. If someone needs to use other format, they should use <strong>Custom URL</strong></p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.3 Custom URL</strong></p>
+</div>
+<div class="paragraph">
+<p>Unlike BaseURL, custom URL is not pre-configured meaning it cannot be used right away. Server administration must be notified to make an apache conf file for the custom URL. Custom url is not restricted in any specific format so, you can use any format you need.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.4 Protocol </strong></p>
+</div>
+<div class="paragraph">
+<p>Both HTTP and HTTPs protocol is supported. This protocol is used to forward the incoming request to api server.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_step_2"><span class="text-primary">Step 2</span></h3>
+<div class="paragraph">
+<p>Now, we add additional information for the API.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.1 Name</strong></p>
+</div>
+<div class="paragraph">
+<p>Unique identifier for the API.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.2 Endpoint</strong></p>
+</div>
+<div class="paragraph">
+<p>Endpoint for the api. All value after the domain should be used as endpoint. If the part of endpoint is used in domain and the rest as endpoint, it will throw error during validation and might throw <strong>API not registered</strong>  error.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.3 Method</strong></p>
+</div>
+<div class="paragraph">
+<p>Currently, the system supports following methods :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>GET</p>
+</li>
+<li>
+<p>POST</p>
+</li>
+<li>
+<p>PUT</p>
+</li>
+<li>
+<p>DELETE</p>
+</li>
+<li>
+<p>HEAD</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Choosing correct method is important. Incorrect method will result in <strong>API not registered</strong> error</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.4 Creator Email</strong></p>
+</div>
+<div class="paragraph">
+<p>If the validator system detect <strong>5xx,4xx</strong> or any error message, this value will be used to send email to the creator</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.5 Is Cached</strong></p>
+</div>
+<div class="paragraph">
+<p>Defines if the response should be cached. Checking this value will give options for cache time interval as well as the parameters that will be used for creating cache key. Options include :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Time<br>
+Currently <strong>Minute, Hour and Day</strong> values are supported. Existing cache will be removed after this defined interval</p>
+</li>
+<li>
+<p>Cache headers<br>
+If this value is set, the validator system will check in headers for this <strong>header-key</strong> and use the corresponding <strong>header-value</strong> to create cache key.</p>
+</li>
+<li>
+<p>Query parameters<br>
+If this value is set, the validator system will check in URL for this <strong>query-key</strong> and use the corresponding <strong>query-value</strong> to create cache key.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If both above values are set, the validator system will use both to create cache key.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.6 Request Add-ons</strong></p>
+</div>
+<div class="paragraph">
+<p>These values will be added to current request. The value that are set here will not be known to user only to validator system and api server. It is extremely important since it will prevent any attempt to bypass validator.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Headers<br>
+Values will be added as header parameters.</p>
+</li>
+<li>
+<p>Query Parameters<br>
+Values will be added as query parameters.</p>
+</li>
+</ol>
+</div>
+</div></p>
+	</div>
+	<hr />
+	
+		    </div>
+        </div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer" >
+      <div class="container">
+        <p class="muted credit">&copy; 2022 | <a href="https://ekbana.com/">Ekbana.</a> All Rights Reserved. </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+    
+  </body>
+</html>

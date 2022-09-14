@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Apostle Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/asciidoctor.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/documentation.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="img/logo.png">
+
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrapper">
+      <div class="site-status-banner">
+        <h1>Site is currently in development</h1>
+      </div>
+
+      <div id="sidebar-wrapper">
+    <div class="sidebar-header">
+        <h3><a href="index.html">EKbana AMS</a></h3>
+    </div>
+<hr class="separator">
+    <h3 class="sidebar">1 What is Apostle</h3>
+            <h4 class="sub-sidebar"><a href="blog/apostle/overview.html">1.1 Overview</a> </h4>
+            <h4 class="sub-sidebar"><a href="blog/clients.html">1.2 Benefits</a> </h4>
+            <h4 class="sub-sidebar"><a href="blog/clients.html">1.3 Architecture</a> </h4>
+    <h3 class="sidebar">2 Projects</h3>
+            <h4 class="sub-sidebar"><a href="blog/addingApi.html">2.1 Getting started</a> </h4>
+    <h3 class="sidebar">3 Packages</h3>
+            <h4 class="sub-sidebar"><a href="blog/introduction.html">3.1 Getting started</a> </h4>
+    <h3 class="sidebar">4 Analytics</h3>
+            <h4 class="sub-sidebar"><a href="blog/introduction.html">4.1 Getting started</a> </h4>
+    <h3 class="sidebar">5 Group</h3>
+            <h4 class="sub-sidebar"><a href="blog/group/groups.html">5.1 About</a> </h4>
+    <h3 class="sidebar">6 Response</h3>
+            <h4 class="sub-sidebar"><a href="blog/response/mock-response.html">6.1 mock response</a> </h4>
+            <h4 class="sub-sidebar"><a href="blog/response/cache-response.html">6.2 cache response</a> </h4>
+            <h4 class="sub-sidebar"><a href="blog/response/backend-response.html">6.3 backend response</a> </h4>
+            <h4 class="sub-sidebar"><a href="blog/response/exception-response.html">6.4 exception response</a> </h4>
+
+
+
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+      </div>
+      <div id="wrap">
+
+
+	<!-- Fixed navbar -->
+    <div class="container">		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+								<a href="blog/response/exception-response.html"><h1>Exception Response</h1></a>
+								<p>26 July 2022</p>
+								<p><div class="paragraph">
+<p>Exception Response is the response returned when error is encountered while serving the request</p>
+</div>
+<div class="sect2">
+<h3 id="_what_does_it_contains">What does it contains?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>status_code : it determines the type of error or exception triggered along with its severity</p>
+</li>
+<li>
+<p>message : detail information about the error</p>
+</li>
+<li>
+<p>ResponseMeta : information about the organization serving this system or service</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exception_status_code_and_cause">Exception, Status Code And Cause</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The detail information about exceptions, its cause and response status code.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Exception</th>
+<th class="tableblock halign-left valign-top">Status Code</th>
+<th class="tableblock halign-left valign-top">Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ApiException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inactive Api, unregistered Api</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PublicKeyException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">403</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use of unregistered public key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IpException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">403</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">request from blocked Ip</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ExpiredKeyException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">403</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use of expired public key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FunnelException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use of invalid funnel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QuotaException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">403</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">request rate exceeded the allowed rate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BaseException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">405</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">request for un-allowed HttpMethod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BaseException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error from backend servers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></p>
+								<a href="blog/addingApi.html"><h1>Getting Started</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Here is how we register apis in apostle system.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1"><span class="text-primary">Step 1</span></h3>
+<div class="paragraph">
+<p>First step is to add base info that is applicable to all apis.Components that are involved are as follows.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.1 Redirect To</strong></p>
+</div>
+<div class="paragraph">
+<p>It refers to the actual domain or IP of the api server. When the request is validated by apostle middleware system, it forwards the request to this value.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.2 Base URL</strong></p>
+</div>
+<div class="paragraph">
+<p>This value is given to the user which they use to make the request. It differs from <strong>Redirect To</strong> is a sense that <strong>Redirect To</strong> is not known to the user, which makes the actual api server safe.Base URL uses a predefined format <strong>slug</strong>.apostle.ekbana.net where slug for project is set from Project Management System. The format is pre-configured so, it can be used as soon as the api is registered.However, the format cannot be changed. If someone needs to use other format, they should use <strong>Custom URL</strong></p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.3 Custom URL</strong></p>
+</div>
+<div class="paragraph">
+<p>Unlike BaseURL, custom URL is not pre-configured meaning it cannot be used right away. Server administration must be notified to make an apache conf file for the custom URL. Custom url is not restricted in any specific format so, you can use any format you need.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>1.4 Protocol </strong></p>
+</div>
+<div class="paragraph">
+<p>Both HTTP and HTTPs protocol is supported. This protocol is used to forward the incoming request to api server.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_step_2"><span class="text-primary">Step 2</span></h3>
+<div class="paragraph">
+<p>Now, we add additional information for the API.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.1 Name</strong></p>
+</div>
+<div class="paragraph">
+<p>Unique identifier for the API.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.2 Endpoint</strong></p>
+</div>
+<div class="paragraph">
+<p>Endpoint for the api. All value after the domain should be used as endpoint. If the part of endpoint is used in domain and the rest as endpoint, it will throw error during validation and might throw <strong>API not registered</strong>  error.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.3 Method</strong></p>
+</div>
+<div class="paragraph">
+<p>Currently, the system supports following methods :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>GET</p>
+</li>
+<li>
+<p>POST</p>
+</li>
+<li>
+<p>PUT</p>
+</li>
+<li>
+<p>DELETE</p>
+</li>
+<li>
+<p>HEAD</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Choosing correct method is important. Incorrect method will result in <strong>API not registered</strong> error</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.4 Creator Email</strong></p>
+</div>
+<div class="paragraph">
+<p>If the validator system detect <strong>5xx,4xx</strong> or any error message, this value will be used to send email to the creator</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.5 Is Cached</strong></p>
+</div>
+<div class="paragraph">
+<p>Defines if the response should be cached. Checking this value will give options for cache time interval as well as the parameters that will be used for creating cache key. Options include :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Time<br>
+Currently <strong>Minute, Hour and Day</strong> values are supported. Existing cache will be removed after this defined interval</p>
+</li>
+<li>
+<p>Cache headers<br>
+If this value is set, the validator system will check in headers for this <strong>header-key</strong> and use the corresponding <strong>header-value</strong> to create cache key.</p>
+</li>
+<li>
+<p>Query parameters<br>
+If this value is set, the validator system will check in URL for this <strong>query-key</strong> and use the corresponding <strong>query-value</strong> to create cache key.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If both above values are set, the validator system will use both to create cache key.</p>
+</div>
+<div class="paragraph">
+<p><br>
+<strong>2.6 Request Add-ons</strong></p>
+</div>
+<div class="paragraph">
+<p>These values will be added to current request. The value that are set here will not be known to user only to validator system and api server. It is extremely important since it will prevent any attempt to bypass validator.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Headers<br>
+Values will be added as header parameters.</p>
+</li>
+<li>
+<p>Query Parameters<br>
+Values will be added as query parameters.</p>
+</li>
+</ol>
+</div>
+</div></p>
+								<a href="blog/response/valid-response.html"><h1>Valid Response</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Valid response are the response other than responses generated by this system.</p>
+</div>
+<div class="paragraph">
+<p>There are 3 types of valid responses.<br>
+1. <a href="https://apostle-docs.ekbana.net/blog/response/mock-response.html">Mock Response</a><br>
+2. <a href="https://apostle-docs.ekbana.net/blog/response/backend-response.html">Backend Response</a><br>
+3. <a href="https://apostle-docs.ekbana.net/blog/response/cache-response.html">Cache response</a></p>
+</div></p>
+								<a href="blog/response/mock-response.html"><h1>Mock Response</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="sect2">
+<h3 id="_why_mock_response">Why Mock Response?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>prevent the API from collapsing while under development or backend server issue.</p>
+</li>
+<li>
+<p>can be used for testing</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_configure_mock_response">How to configure Mock Response?</h3>
+
+</div></p>
+								<a href="blog/response/cache-response.html"><h1>Cache Response</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Cache Response is the response service that enables the caching of the response in order to decrease the response time of the request.</p>
+</div>
+<div class="sect2">
+<h3 id="_why_caching_response">Why Caching Response ?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>decrease the response time of request.</p>
+</li>
+<li>
+<p>reduces the loads to backend servers.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_configure_caching">How to configure Caching</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_how_caching_is_done">How Caching is done ?</h3>
+<div class="paragraph">
+<p>Only the responses from the cache enabled APIs are stored in cache.</p>
+</div>
+<div class="paragraph">
+<p>Cacheable responses are stored using Hash data structure in Redis database.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hash Key is created using the alias and api_id</p>
+</li>
+<li>
+<p>Sub Hash Key is created using the caching headers param, caching query params and path variables specified while registering the API.</p>
+</li>
+<li>
+<p>Response are set as values for the specific sub hash key for specific TTL period defined while registering API</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Only the response with http status 200 are eligible for caching.</p>
+</div>
+</div></p>
+								<a href="blog/response/backend-response.html"><h1>Backend Response</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Backend Response is the response obtained from the backend servers.</p>
+</div></p>
+								<a href="blog/policy/publickey-validation-policy.html"><h1>Publickey Validation</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Publickey Validation allows to send request from the valid client by validating Api-Key.</p>
+</div>
+<div class="sect3">
+<h4 id="_what_is_api_key">What is Api-Key?</h4>
+<div class="paragraph">
+<p>Api-Key is a unique secret key (public key) generated when registering the group of Api (project) in the system.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_is_publickey_validated">How is Publickey Validated?</h4>
+<div class="paragraph">
+<p>When client sends request, they should send the Api-Key in the header section. The provided Api_Key must match with the publickey registered in the system else it throws PublicKeyException.</p>
+</div>
+</div></p>
+								<a href="blog/policy/personalpackage-validation-policy.html"><h1>PersonalPackage Validation</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>PersonalPackage Validation  validated the personal packaged. It is associated with the public key.</p>
+</div>
+<div class="sect3">
+<h4 id="_what_is_personalpackage">What is PersonalPackage?</h4>
+<div class="paragraph">
+<p>PersonalPackage is the package defining the quota and lifespan of the public key. Quota includes the agreed total calls and grace calls allowed for specific api. And lifespan determines how long to serve the Api.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_and_when_is_personalpackage_validated">How and when is PersonalPackage validated?</h4>
+<div class="paragraph">
+<p>PublicKey validated requests are set for personal package validation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>total calls usages and grace calls usages are stored in TOTAL_CALLS and GRACE_CALLS keyspace in redis database.</p>
+</li>
+<li>
+<p>when the total call usages exceeds the agreed total calls, then the api is registered in GRACE_KEYSPACE and grace calls are started.</p>
+</li>
+<li>
+<p>if used grace calls exceed the allowed grace calls, then public key is registered in EXPIRED_KEYSPACE.</p>
+</li>
+<li>
+<p>when the current time exceed the lifespan of public key then the public key is expired and is registered in EXPIRED_KEYSPACE.</p>
+</li>
+<li>
+<p>whenever a request is using public key which is in EXPIRED_KEYSPACE is sent, then it throws ExpiredKeyException.</p>
+</li>
+</ul>
+</div>
+</div></p>
+								<a href="blog/policy/ip-validation-policy.html"><h1>IP Validation</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>IP Validation validate the Ip address of the request. Only the requests from the valid IP source can proceed further</p>
+</div>
+<div class="sect2">
+<h3 id="_classification_of_ip_addresses">Classification of IP Addresses</h3>
+<div class="sect3">
+<h4 id="_1_marked_ip_address">1. Marked IP Address</h4>
+<div class="paragraph">
+<p>Marked IP Address are the suspicious IP address that has performed some miscellaneous activities. These Ip address are closely monitored by the system and if further miscellaneous activities are performed, then it is blocked. These address can further send requests.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_blocked_ip_address">2. Blocked IP Address</h4>
+<div class="paragraph">
+<p>When the suspicious/marked ip address further perform miscellaneous or illegal activities, then there address are marked as block ip address. They cannot further send requests to the system.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_valid_ip_address">3. Valid IP Address</h4>
+<div class="paragraph">
+<p>These are the Ip address from the valid sources. They are allowed to send requests to system.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_validation_is_done">How Validation is done?</h3>
+<div class="paragraph">
+<p>All the blocked and marked Ip address are stores in BLOCKED_KEYSPACE AND MARKED_KEYSPACE in hash data structure in redis database. The system first checks if the given ip address is in BLOCKED_KEYSPACE, if present it returns the IPException else proceed forward.</p>
+</div>
+<div class="paragraph">
+<p>A set of rules has been implemented which is responsible for analysing the ip address. It registers the IP address in MARKED_KEYSPACE and BLOCKED_KEYSPACE.</p>
+</div>
+</div></p>
+								<a href="blog/policy/funnel-validation-policy.html"><h1>Funnel Validation</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Funnel Validation determine the rate of request to be served under given public key.</p>
+</div>
+<div class="sect2">
+<h3 id="_why_funnel_validation">Why Funnel Validation?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>determines the number of requests to be served in specific time frame.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_how_is_funnel_validation_done">How is Funnel Validation done?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>A rate is defined when an api is registered under the group (public key).</p>
+</li>
+<li>
+<p>supports request per minute, hour, day, month and year.</p>
+</li>
+<li>
+<p>Whenever a request is served, the served request count is incremented by 1.</p>
+</li>
+<li>
+<p>If the served request count exceed defined rate limit for given time interval, then it throws FunnelException.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_tracking_of_request_rates_is_done">How tracking of request rates is done?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>the served request count is stored for specific interval of time in the redis database in following format</p>
+<div class="literalblock">
+<div class="content">
+<pre>{public_key_alias}{api-id}_{time-interval} : {served request count} TTL : {TTL duration}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>when a request is successfully served then the call count in incremented by 1.</p>
+</li>
+</ul>
+</div>
+</div>
+</div></p>
+								<a href="blog/policy/api-validation-policy.html"><h1>Api Validation</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Api Validation validates the api used in given request.</p>
+</div>
+<div class="sect2">
+<h3 id="_how_is_api_validated">How is Api validated?</h3>
+<div class="paragraph">
+<p>An Api consists of following parts:<br>
+    . Base Url : www.xyz.com<br>
+    . Request Method : GET, POST, PUT, DELETE, PATCH<br>
+    . End Point : /abc/def</p>
+</div>
+<div class="paragraph">
+<p>An Api is set to be valid Api if and only if Api with same base url, request method and endpoint is registered in the system else invalid.</p>
+</div>
+<div class="paragraph">
+<p>ApiException is thrown by system when an invalid api request is received.</p>
+</div>
+</div></p>
+								<a href="blog/group/groups.html"><h1>What is a group</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Groups are the collection of APIs that is used by the client.Api can belong to any projects. Thus, a group may contain APIs from multiple projects.Each group has its own public which must be used to send request to the validator.</p>
+</div>
+<div class="sect3">
+<h4 id="_importance">Importance</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Groups can use package independently according to the users need.</p>
+</li>
+<li>
+<p>Grace amount can be set to different amount for each api in that group which won&#8217;t affect same api in different group</p>
+</li>
+<li>
+<p>Not restricted to same api. Different group can use same api from same projects.</p>
+</li>
+<li>
+<p>Separate usage dashboard.</p>
+</li>
+<li>
+<p>Public key is independent, so it can be blocked or assigned a new one for all apis in that group</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fields">Fields</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="sect3">
+<h4 id="_basic">Basic</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Group</strong> : Name of the group</p>
+</li>
+<li>
+<p><strong>User email</strong> : This value will be used to send email to the User if following issues are detected :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>A week before public key expiration date.</p>
+</li>
+<li>
+<p>Allowed calls about to exhaust.</p>
+</li>
+<li>
+<p>Grace period started.</p>
+</li>
+<li>
+<p>Grace period ended and key is expired</p>
+</li>
+<li>
+<p>DDoS attempt</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_selected_apis">Selected APIs</h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><strong>API Name</strong> : same as defined during API registration.<br>
+<strong>Package</strong>  : Here you can select base package for the API. Even in a group different API can have different Package.<br>
+<strong>Grace</strong>    : Grace calls are the calls that are activated after paid calls are over. Paid calls are defined in a package. Grace calls are allocated so that user can get time to re-subscribe.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_public_key">Public Key</h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><strong>Expires On</strong> : Expiration date of the group and associated public key.<br>
+<strong>Public Key</strong> : Public key is used by user while sending request to validator.</p>
+</div>
+</div>
+</div></p>
+								<a href="blog/apostle/overview.html"><h1>Apostle - overview</h1></a>
+								<p>16 May 2022</p>
+								<p><div class="paragraph">
+<p>Apostle is a reliable, secure and scalable way to publish, consume and manage API’s.It ensures optimal performance of the API’s, tracks and enforces usage, authentication, and more.
+This topic provides an overview of Apostle, including register your API, create group and monitor usage. For more information on specific topic please see relative link on sidebar.</p>
+</div>
+<div class="paragraph">
+<p>In this topic we will walk you through the process of registering your first API and monitoring its usage.</p>
+</div>
+<div class="paragraph">
+<p>Let’s do it step by step.</p>
+</div>
+<div class="sect1">
+<h2 id="_step_one_register_your_api">Step One : Register your api</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on project on the left sidebar.</p>
+</li>
+<li>
+<p>If you don&#8217;t see you project listed, you need to register it on <strong>Project Management System</strong>, and if you don&#8217;t have access to that system, please contact administrator for registration.</p>
+</li>
+<li>
+<p>Click on Add API.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For more info on the fields <a href="https://apostle-docs.ekbana.net/blog/addingApi.html" class="link-no-decor">click here</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_two_create_a_group">Step two : Create a group</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on add group on client page</p>
+</li>
+<li>
+<p>Click on select API from project list. You can select api from multiple projects.</p>
+</li>
+<li>
+<p>Select the APIs and click on next.</p>
+</li>
+<li>
+<p>Enter group name and user email for this group.</p>
+</li>
+<li>
+<p>Select package and add grace calls if it applies.</p>
+</li>
+<li>
+<p>Generate public key and save</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For more info on fields <a href="https://apostle-docs.ekbana.net/blog/group/groups.html" class="link-no-decor">click here</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_three_create_package_only_necessary_if_you_want_to_use_custom_pacakge">Step three : Create package [ only necessary if you want to use custom pacakge ]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on packages on left sidebar.</p>
+</li>
+<li>
+<p>Click on add package.</p>
+</li>
+<li>
+<p>Fill out necessary details.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For more info on fields <span class="text-primary">click here</span>.</p>
+</div>
+</div>
+</div></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<hr />
+		    </div>
+        </div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer" >
+      <div class="container">
+        <p class="muted credit">&copy; 2022 | <a href="https://ekbana.com/">Ekbana.</a> All Rights Reserved. </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prettify.js"></script>
+    
+  </body>
+</html>
