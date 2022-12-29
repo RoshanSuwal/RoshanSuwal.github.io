@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Roshan Suwal</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>Roshan Suwal | My github page</title>
+    <meta name="generator" content="Jekyll v3.9.2" />
+    <meta property="og:title" content="Roshan Suwal" />
+    <meta name="author" content="Roshan Suwal" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="My github page" />
+    <meta property="og:description" content="My github page" />
+    <link rel="canonical" href="https://roshansuwal.github.io/" />
+    <meta property="og:url" content="https://roshansuwal.github.io/" />
+    <meta property="og:site_name" content="Roshan Suwal" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Roshan Suwal" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Roshan Suwal"},"description":"My github page","headline":"Roshan Suwal","name":"Roshan Suwal","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roshansuwal.github.io/assets/logos/logo.jpg"},"name":"Roshan Suwal"},"url":"https://roshansuwal.github.io/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=9eff9270781144297c36e6e20b16c9ee74e9fdcd">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--<h1>Roshan Suwal</h1>-->
+        <header>
+            <h1><a href="https://roshansuwal.github.io/">Roshan Suwal</a></h1>
+
+            <img src="../assets/logos/logo.jpg" alt="Logo" />
+
+
+            <p>Contact: <a href="mailto:roshan.732419@thc.tu.edu.np">roshan [at] tu.edu</a><br>
+                GitHub: <a href="https://github.com/RoshanSuwal">roshansuwal</a><br>
+                <!-- Twitter: <a href="https://twitter.com/EugenieLai">@EugenieLai</a><br> -->
+                <!--Instagram: <a href="https://www.instagram.com/eugeniesday/">eugeniesday</a><br>-->
+                <!--Calendar: <a href="https://calendar.google.com/calendar?cid=eXVqaW5nbGFpMDcwN0BnbWFpbC5jb20">Scheduled</a><br> &mdash; -->
+                <a href="../docs/cvs/cv-roshan.pdf">CV</a>
+                <!-- <a href="/docs/cvs/cv-roshan.pdf">CV</a>, <a href="/docs/transcripts/transcript-eylai.pdf">transcript</a> -->
+            </p>
+
+            <p>News <small>[<a href="https://roshansuwal.github.io/posts/news.html">More Updates</a>] <br>
+                    <!-- 2021.04 Joining the <a href="http://dsg.csail.mit.edu/">Data Systems Group (DSG)</a> at MIT EECS
+                    CSAIL as a PhD student in Fall '21.</small>
+            </p> -->
+
+                    <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+        </header>
+        <section>
+
+
+            <h1 id="ams">Api Management System: A scalable, multi-cloud API management platform for securing,
+                publishing, and analyzing APIs.</h1>
+            <p>Date: Aug 2021- Feb 2022 </p>
+            <p>
+                <em>I teamed up with the big data team of Ekbana Solution to develop scalable and extendable system to
+                    manage, analyze and visualize APIS. We built two services: backend service to handle APIs
+                    requests and web service for APIs management and visualization.</em>
+            </p>
+
+            <h2 id="overview">Overview</h2>
+            <p>AMS is a reliable, secure and scalable way to publish, consume and manage API’s.It ensures optimal
+                performance of the API’s, tracks and enforces usage, authentication, and more.</p>
+
+            <h2 id="system-design-architecture">System Design &amp; Architecture</h2>
+
+            <p><img src="../assets/images/ams-architecture.png" alt="alt text" title="surrey.png" height="80%"
+                    width="80%" style="display: block; margin: 0 auto" /></p>
+
+            <p>All requests from the client applications first reach the API gateway, which then forwards them to
+                respective backend services. API gateway acts as a facade to the backend services, allowing API
+                provicers to abstract API implementations and evolve backend architecture without impacting API
+                consumers. The gateway enables consistent configuration of routing, security, throttling, caching and
+                observability.
+            </p>
+            <p>The API gateway :
+            <ul>
+                <li>Accepts API calls and routes them to configured backends.</li>
+                <li>Verifies API keys and IPs.</li>
+                <li>Enforces usage quotas and rate limits.</li>
+                <li> Adds the necessary header and query parameters to the requests.</li>
+                <li> If configured, caches to improve response latency and minimize the load on backend services.</li>
+                <li> If configured, returns the mock responses.</li>
+                <li> Emits logs, metrics.</li>
+                <li> Sends the notification and emails about the API status as configured.</li>
+            </ul>
+            </p>
+
+            <h2 id="internal-architecture">Internal Architecture of AMS</h2>
+            <p><a href="../assets/images/ams-internal-architecture.jpeg"><img
+                        src="../assets/images/ams-internal-architecture.jpeg" alt="alt text" title="surrey.png"
+                        height="100%" width="100%" style="display: block; margin: 0 auto" /></a></p>
+
+
+            <p><a href="../index.html">Back to home page</a></p>
+
+        </section>
+        <!--<footer>
+        <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>-->
+    </div>
+    <script src="./assets/js/scale.fix.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-167616887-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+
+</html>
